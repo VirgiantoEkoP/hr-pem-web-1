@@ -1,0 +1,65 @@
+.metric-pill {
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  background: #fff;
+  font-size: 0.85rem;
+}
+.action-group {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+.section-caption {
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-size: 0.75rem;
+  color: #64748b;
+  font-weight: 700;
+}
+.validation-summary {
+  border-radius: 0.85rem;
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  color: #9f1239;
+  padding: 0.85rem;
+  margin-bottom: 1rem;
+  display: none;
+}
+.validation-summary.show {
+  display: block;
+}
+.data-card-title {
+  font-size: 1.05rem;
+  font-weight: 750;
+}
+.avatar-sm {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: #e0e7ff;
+  color: #1e3a8a;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+}
+.soft-panel {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+.kbd-help {
+  font-size: 0.78rem;
+  background: #111827;
+  color: #fff;
+  border-radius: 0.4rem;
+  padding: 0.1rem 0.35rem;
+}
+.map-link {
+  font-size: 0.85rem;
+}
+.mockup-frame-label {
+  font-weight: 700;
+}

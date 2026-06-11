@@ -1,0 +1,65 @@
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 280px;
+  background: #0f172a;
+  color: #e5e7eb;
+  padding: 1rem;
+  z-index: 1020;
+  transition: 0.25s ease;
+  overflow-y: auto;
+}
+.sidebar .brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0.7rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 0.8rem;
+}
+.sidebar .brand .brand-mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+}
+.sidebar small {
+  color: #9ca3af;
+}
+.sidebar .nav-section {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #94a3b8;
+  margin: 0.9rem 0.75rem 0.35rem;
+}
+.sidebar .nav-link {
+  color: #cbd5e1;
+  border-radius: 0.85rem;
+  padding: 0.65rem 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0.1rem 0;
+}
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+  background: rgba(255, 255, 255, 0.09);
+  color: #fff;
+}
+.sidebar-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.35);
+  z-index: 1019;
+  display: none;
+}
+.sidebar-backdrop.show {
+  display: block;
+}
+@media (max-width: 991.98px) {
+  .sidebar {
+    box-shadow: 0 24px 80px rgba(15, 23, 42, 0.35);
+  }
+}

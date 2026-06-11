@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Form Jabatan · HR Management</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link href="../../assets/css/main.css" rel="stylesheet" />
+    <link href="../../assets/css/sidebar.css" rel="stylesheet" />
+    <link href="../../assets/css/components.css" rel="stylesheet" />
+  </head>
+  <body>
+    <script>
+      document.addEventListener("DOMContentLoaded", () =>
+        HRAuth.requireAuth("admin"),
+      );
+    </script>
+
+    <div
+      data-active="jabatan"
+      data-base-path="../.."
+      data-component="navbar"
+      data-variant="admin"
+    ></div>
+    <main class="main-content">
+      <div
+        data-base-path="../.."
+        data-component="header"
+        data-subtitle="Tambah atau edit jabatan"
+        data-title="Form Jabatan"
+        data-variant="admin"
+      ></div>
+      <div class="card card-clean">
+        <div class="card-body">
+          <form id="jabatanForm" novalidate="">
+            <div class="validation-summary"></div>
+            <input name="id" type="hidden" />
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label required-mark">Divisi</label
+                ><select
+                  class="form-select"
+                  data-label="Divisi"
+                  data-validate="required"
+                  id="divisiSelect"
+                  name="id_divisi"
+                ></select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label required-mark">Nama Jabatan</label
+                ><input
+                  class="form-control"
+                  data-label="Nama Jabatan"
+                  data-validate="required|min:3"
+                  name="nama_jabatan"
+                />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label required-mark">Level</label
+                ><select
+                  class="form-select"
+                  data-label="Level"
+                  data-validate="required"
+                  name="level"
+                >
+                  <option>Staff</option>
+                  <option>Supervisor</option>
+                  <option>Manager</option>
+                  <option>Direktur</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label required-mark">Status</label
+                ><select
+                  class="form-select"
+                  data-label="Status"
+                  data-validate="required"
+                  name="status"
+                >
+                  <option>Aktif</option>
+                  <option>Nonaktif</option>
+                </select>
+              </div>
+            </div>
+            <div class="d-flex justify-content-end gap-2 mt-4">
+              <a class="btn btn-light" href="index.html">Batal</a
+              ><button class="btn btn-primary" type="submit">Simpan</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div
+        data-base-path="../.."
+        data-component="footer"
+        data-variant="admin"
+      ></div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/js/storage.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script src="../../assets/js/validation.js"></script>
+    <script src="../../assets/js/utils.js"></script>
+    <script src="../../components/components.js"></script>
+    <script src="../../assets/js/app.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

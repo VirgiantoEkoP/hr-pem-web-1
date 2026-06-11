@@ -1,0 +1,33 @@
+<template data-variant="admin">
+  <div class="topbar">
+    <div class="d-flex align-items-center justify-content-between gap-3">
+      <div class="d-flex align-items-center gap-2">
+        <button class="btn btn-light d-lg-none" data-sidebar-toggle>
+          <i class="bi bi-list"></i>
+        </button>
+        <div>
+          <h1 class="page-title h3">{{pageTitle}}</h1>
+          <div class="text-muted-small">{{pageSubtitle}}</div>
+        </div>
+      </div>
+      <div class="d-none d-md-flex align-items-center gap-2">
+        <span class="metric-pill"
+          ><i class="bi bi-database-check me-1"></i>LocalStorage</span
+        >
+        <span class="metric-pill"
+          ><i class="bi bi-person-circle me-1"></i
+          ><span data-session-name>Admin</span></span
+        >
+      </div>
+    </div>
+  </div>
+</template>
+
+<template data-variant="employee">
+  <div class="mb-3">
+    <h1 class="page-title h3">{{pageTitle}}</h1>
+    <div class="text-muted-small">
+      Halo, <span data-session-name>Karyawan</span>
+    </div>
+  </div>
+</template>

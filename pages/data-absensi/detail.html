@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Detail Absensi · HR Management</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link href="../../assets/css/main.css" rel="stylesheet" />
+    <link href="../../assets/css/sidebar.css" rel="stylesheet" />
+    <link href="../../assets/css/components.css" rel="stylesheet" />
+  </head>
+  <body>
+    <script>
+      document.addEventListener("DOMContentLoaded", () =>
+        HRAuth.requireAuth("admin"),
+      );
+    </script>
+
+    <div
+      data-active="absensi"
+      data-base-path="../.."
+      data-component="navbar"
+      data-variant="admin"
+    ></div>
+    <main class="main-content">
+      <div
+        data-base-path="../.."
+        data-component="header"
+        data-subtitle="Detail absensi"
+        data-title="Detail Absensi"
+        data-variant="admin"
+      ></div>
+      <div class="card card-clean">
+        <div class="card-body" id="absensiDetail"></div>
+      </div>
+      <div
+        data-base-path="../.."
+        data-component="footer"
+        data-variant="admin"
+      ></div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/js/storage.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script src="../../assets/js/validation.js"></script>
+    <script src="../../assets/js/utils.js"></script>
+    <script src="../../components/components.js"></script>
+    <script src="../../assets/js/app.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login Admin · HR Management</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/css/main.css" rel="stylesheet" />
+    <link href="assets/css/sidebar.css" rel="stylesheet" />
+    <link href="assets/css/components.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="login-shell p-3">
+      <div class="card login-card">
+        <div class="card-body p-4 p-md-5">
+          <div class="d-flex align-items-center gap-3 mb-4">
+            <div class="brand-mark">HR</div>
+            <div>
+              <h1 class="h4 mb-0 fw-bold">Login Backoffice</h1>
+              <div class="text-muted-small">Masuk sebagai Admin HR</div>
+            </div>
+          </div>
+          <form id="adminLoginForm" novalidate>
+            <div class="validation-summary"></div>
+            <div class="mb-3">
+              <label class="form-label required-mark">Email</label
+              ><input
+                type="email"
+                class="form-control"
+                name="email"
+                value="admin@hr.local"
+                data-validate="required|email"
+                data-label="Email"
+              />
+            </div>
+            <div class="mb-3">
+              <label class="form-label required-mark">Password</label
+              ><input
+                type="password"
+                class="form-control"
+                name="password"
+                value="admin123"
+                data-validate="required|min:6"
+                data-label="Password"
+              />
+            </div>
+            <button class="btn btn-primary w-100 py-2" type="submit">
+              <i class="bi bi-box-arrow-in-right me-2"></i>Masuk
+            </button>
+            <div class="text-center mt-3">
+              <a href="employee/login.html">Masuk sebagai karyawan</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/storage.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/validation.js"></script>
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/login.js"></script>
+  </body>
+</html>

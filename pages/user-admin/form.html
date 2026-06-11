@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Form User Admin · HR Management</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link href="../../assets/css/main.css" rel="stylesheet" />
+    <link href="../../assets/css/sidebar.css" rel="stylesheet" />
+    <link href="../../assets/css/components.css" rel="stylesheet" />
+  </head>
+  <body>
+    <script>
+      document.addEventListener("DOMContentLoaded", () =>
+        HRAuth.requireAuth("admin"),
+      );
+    </script>
+
+    <div
+      data-active="user-admin"
+      data-base-path="../.."
+      data-component="navbar"
+      data-variant="admin"
+    ></div>
+    <main class="main-content">
+      <div
+        data-base-path="../.."
+        data-component="header"
+        data-subtitle="Tambah atau edit admin"
+        data-title="Form User Admin"
+        data-variant="admin"
+      ></div>
+      <div class="card card-clean">
+        <div class="card-body">
+          <form id="adminForm" novalidate="">
+            <div class="validation-summary"></div>
+            <input name="id" type="hidden" />
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label required-mark">Nama</label
+                ><input
+                  class="form-control"
+                  data-validate="required|min:3"
+                  name="nama"
+                />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label required-mark">Email</label
+                ><input
+                  class="form-control"
+                  data-validate="required|email"
+                  name="email"
+                  type="email"
+                />
+              </div>
+              <div class="col-md-4">
+                <label class="form-label required-mark">Password</label
+                ><input
+                  class="form-control"
+                  data-validate="required|min:6"
+                  name="password"
+                />
+              </div>
+              <div class="col-md-4">
+                <label class="form-label required-mark">Role</label
+                ><select
+                  class="form-select"
+                  data-validate="required"
+                  name="role"
+                >
+                  <option>Super Admin</option>
+                  <option>Admin HR</option>
+                  <option>Viewer</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label required-mark">Status</label
+                ><select
+                  class="form-select"
+                  data-validate="required"
+                  name="status"
+                >
+                  <option>Aktif</option>
+                  <option>Nonaktif</option>
+                </select>
+              </div>
+            </div>
+            <div class="d-flex justify-content-end gap-2 mt-4">
+              <a class="btn btn-light" href="index.html">Batal</a
+              ><button class="btn btn-primary" type="submit">Simpan</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div
+        data-base-path="../.."
+        data-component="footer"
+        data-variant="admin"
+      ></div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/js/storage.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script src="../../assets/js/validation.js"></script>
+    <script src="../../assets/js/utils.js"></script>
+    <script src="../../components/components.js"></script>
+    <script src="../../assets/js/app.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

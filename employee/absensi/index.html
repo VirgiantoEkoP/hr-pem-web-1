@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Absensi · HR Management</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link href="../../assets/css/main.css" rel="stylesheet" />
+    <link href="../../assets/css/sidebar.css" rel="stylesheet" />
+    <link href="../../assets/css/components.css" rel="stylesheet" />
+  </head>
+  <body>
+    <script>
+      document.addEventListener("DOMContentLoaded", () =>
+        HRAuth.requireAuth("employee"),
+      );
+    </script>
+    <div
+      data-active="absensi"
+      data-base-path="../.."
+      data-component="navbar"
+      data-variant="employee"
+    ></div>
+    <main class="employee-shell">
+      <div
+        data-base-path="../.."
+        data-component="header"
+        data-title="Absensi"
+        data-variant="employee"
+      ></div>
+      <div class="row g-3">
+        <div class="col-lg-7">
+          <div class="card card-clean">
+            <div class="card-body">
+              <div class="data-card-title mb-2">Absensi Hari Ini</div>
+              <p class="text-muted-small">
+                Gunakan kamera dan lokasi perangkat. Jalankan via localhost agar
+                browser mengizinkan kamera/GPS.
+              </p>
+              <div class="camera-box mb-3">
+                <video autoplay="" id="cameraVideo" playsinline=""></video
+                ><canvas class="d-none" id="cameraCanvas"></canvas>
+              </div>
+              <div class="d-flex flex-wrap gap-2">
+                <button class="btn btn-outline-primary" id="startCamera">
+                  <i class="bi bi-camera-video me-1"></i>Aktifkan Kamera</button
+                ><button class="btn btn-outline-secondary" id="capturePhoto">
+                  <i class="bi bi-camera me-1"></i>Ambil Foto</button
+                ><button class="btn btn-outline-success" id="getLocation">
+                  <i class="bi bi-geo-alt me-1"></i>Ambil Lokasi
+                </button>
+              </div>
+              <div class="soft-panel mt-3">
+                <div>
+                  Lokasi: <strong id="locationText">Belum diambil</strong>
+                </div>
+                <div>Foto: <strong id="photoText">Belum diambil</strong></div>
+              </div>
+              <button
+                class="btn btn-primary btn-lg w-100 mt-3"
+                id="submitAbsensi"
+              >
+                <i class="bi bi-check2-circle me-1"></i>Simpan Absensi
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="card card-clean">
+            <div class="card-body">
+              <div class="data-card-title mb-3">Status Hari Ini</div>
+              <div id="todayStatus"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        data-base-path="../.."
+        data-component="footer"
+        data-variant="employee"
+      ></div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/js/storage.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script src="../../assets/js/validation.js"></script>
+    <script src="../../assets/js/utils.js"></script>
+    <script src="../../components/components.js"></script>
+    <script src="../../assets/js/app.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

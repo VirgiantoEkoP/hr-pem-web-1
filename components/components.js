@@ -1,0 +1,247 @@
+/*
+  Komponen reusable HR Management.
+  File ini sengaja diletakkan di folder /components agar header, navbar,
+  dan footer tidak perlu dicopy manual di setiap halaman.
+
+  Cara pakai di HTML:
+  <div data-component="navbar" data-variant="admin" data-base-path="../.." data-active="dashboard"></div>
+  <div data-component="header" data-variant="admin" data-title="Dashboard" data-subtitle="Ringkasan"></div>
+  <div data-component="footer" data-variant="admin"></div>
+*/
+
+const HRComponentTemplates = {
+  header: {
+    admin: `
+      <div class="topbar">
+        <div class="d-flex align-items-center justify-content-between gap-3">
+          <div class="d-flex align-items-center gap-2">
+            <button class="btn btn-light d-lg-none" data-sidebar-toggle>
+              <i class="bi bi-list"></i>
+            </button>
+
+            <div>
+              <h1 class="page-title h3">{{pageTitle}}</h1>
+              <div class="text-muted-small">{{pageSubtitle}}</div>
+            </div>
+          </div>
+
+          <div class="d-none d-md-flex align-items-center gap-2">
+            <span class="metric-pill">
+              <i class="bi bi-database-check me-1"></i>
+              LocalStorage
+            </span>
+            <span class="metric-pill">
+              <i class="bi bi-person-circle me-1"></i>
+              <span data-session-name>Admin</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    `,
+
+    employee: `
+      <div class="mb-3">
+        <h1 class="page-title h3">{{pageTitle}}</h1>
+        <div class="text-muted-small">
+          Halo, <span data-session-name>Karyawan</span>
+        </div>
+      </div>
+    `,
+  },
+
+  navbar: {
+    admin: `
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">HR</div>
+          <div>
+            <div class="fw-bold">HR Management</div>
+            <small>Backoffice Admin</small>
+          </div>
+        </div>
+
+        <div class="nav-section">Menu Utama</div>
+
+        <nav class="nav flex-column">
+          <a class="nav-link" data-menu="dashboard" href="{{basePath}}/dashboard.html">
+            <i class="bi bi-speedometer2"></i>
+            <span>Dashboard</span>
+          </a>
+
+          <a class="nav-link" data-menu="karyawan" href="{{basePath}}/pages/data-karyawan/index.html">
+            <i class="bi bi-people"></i>
+            <span>Data Karyawan</span>
+          </a>
+
+          <a class="nav-link" data-menu="departemen" href="{{basePath}}/pages/data-departemen/index.html">
+            <i class="bi bi-building"></i>
+            <span>Departemen</span>
+          </a>
+
+          <a class="nav-link" data-menu="divisi" href="{{basePath}}/pages/data-divisi/index.html">
+            <i class="bi bi-diagram-3"></i>
+            <span>Divisi</span>
+          </a>
+
+          <a class="nav-link" data-menu="jabatan" href="{{basePath}}/pages/data-jabatan/index.html">
+            <i class="bi bi-person-badge"></i>
+            <span>Jabatan</span>
+          </a>
+
+          <a class="nav-link" data-menu="absensi" href="{{basePath}}/pages/data-absensi/index.html">
+            <i class="bi bi-clock-history"></i>
+            <span>Data Absensi</span>
+          </a>
+
+          <a class="nav-link" data-menu="tugas" href="{{basePath}}/pages/data-tugas/index.html">
+            <i class="bi bi-list-task"></i>
+            <span>Tugas Harian</span>
+          </a>
+
+          <a class="nav-link" data-menu="penilaian" href="{{basePath}}/pages/data-penilaian/index.html">
+            <i class="bi bi-clipboard2-check"></i>
+            <span>Penilaian Kinerja</span>
+          </a>
+
+          <a class="nav-link" data-menu="user-admin" href="{{basePath}}/pages/user-admin/index.html">
+            <i class="bi bi-shield-lock"></i>
+            <span>User Admin</span>
+          </a>
+        </nav>
+
+        <div class="nav-section">Akun</div>
+
+        <div class="soft-panel bg-transparent border-secondary-subtle text-light mx-1">
+          <div class="fw-semibold" data-session-name>Admin</div>
+          <small data-session-role>Role</small>
+          <button class="btn btn-outline-light btn-sm w-100 mt-3" data-logout>
+            <i class="bi bi-box-arrow-right me-1"></i>
+            Keluar
+          </button>
+        </div>
+      </aside>
+
+      <div class="sidebar-backdrop"></div>
+    `,
+
+    employee: `
+      <nav class="navbar navbar-expand-lg employee-nav sticky-top">
+        <div class="container">
+          <a class="navbar-brand fw-bold" href="{{basePath}}/employee/index.html">
+            <span class="brand-mark d-inline-flex me-2" style="width: 36px; height: 36px;">
+              HR
+            </span>
+            Portal Karyawan
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#empNav"
+            aria-controls="empNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="empNav">
+            <div class="navbar-nav ms-auto">
+              <a class="nav-link" data-menu="beranda" href="{{basePath}}/employee/index.html">Beranda</a>
+              <a class="nav-link" data-menu="absensi" href="{{basePath}}/employee/absensi/index.html">Absensi</a>
+              <a class="nav-link" data-menu="riwayat" href="{{basePath}}/employee/absensi/riwayat.html">Riwayat</a>
+              <a class="nav-link" data-menu="tugas" href="{{basePath}}/employee/tugas/index.html">Tugas</a>
+              <a class="nav-link" data-menu="profil" href="{{basePath}}/employee/profil/index.html">Profil</a>
+              <button class="btn btn-outline-danger btn-sm ms-lg-2 mt-2 mt-lg-0" data-logout>
+                Keluar
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    `,
+  },
+
+  footer: {
+    admin: `
+      <footer class="app-footer">
+        <span>HR Management Prototype</span>
+        <span>Backoffice · data tersimpan di localStorage</span>
+      </footer>
+    `,
+
+    employee: `
+      <footer class="app-footer">
+        <span>HR Management Prototype</span>
+        <span>Portal Karyawan · absensi memakai kamera dan GPS perangkat</span>
+      </footer>
+    `,
+  },
+};
+
+const HRComponents = (() => {
+  const normalizeBasePath = (basePath) => {
+    if (!basePath || basePath === ".") {
+      return ".";
+    }
+
+    return basePath.replace(/\/$/, "");
+  };
+
+  const replaceContext = (template, context) => {
+    let output = template;
+
+    Object.entries(context).forEach(([key, value]) => {
+      output = output.replaceAll(`{{${key}}}`, value || "");
+    });
+
+    return output;
+  };
+
+  const applyActiveMenu = (container, activeMenu) => {
+    if (!activeMenu) {
+      return;
+    }
+
+    container.querySelectorAll("[data-menu]").forEach((item) => {
+      item.classList.toggle("active", item.dataset.menu === activeMenu);
+    });
+  };
+
+  const loadAll = () => {
+    const targets = Array.from(document.querySelectorAll("[data-component]"));
+
+    targets.forEach((target) => {
+      const componentName = target.dataset.component;
+      const variant = target.dataset.variant || "admin";
+      const basePath = normalizeBasePath(target.dataset.basePath || ".");
+      const template = HRComponentTemplates?.[componentName]?.[variant];
+
+      const context = {
+        basePath,
+        pageTitle: target.dataset.title || "",
+        pageSubtitle: target.dataset.subtitle || "",
+        activeMenu: target.dataset.active || "",
+      };
+
+      if (!template) {
+        target.innerHTML = `
+          <div class="alert alert-warning m-3">
+            Komponen <strong>${componentName}</strong> untuk variant
+            <strong>${variant}</strong> tidak ditemukan.
+          </div>
+        `;
+        return;
+      }
+
+      target.innerHTML = replaceContext(template, context);
+      applyActiveMenu(target, context.activeMenu);
+      target.dataset.componentLoaded = "true";
+    });
+  };
+
+  return { loadAll };
+})();
+
+window.HRComponents = HRComponents;
