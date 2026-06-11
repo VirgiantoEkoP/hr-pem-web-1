@@ -504,24 +504,3 @@ hr-management/
 | **Lokasi absensi**   | `navigator.geolocation` API untuk koordinat GPS                                 |
 
 ---
-
-## Revisi Struktur Component
-
-Folder `components/` ditambahkan setara dengan `pages/` agar markup header, navbar, dan footer tidak perlu disalin manual di setiap halaman.
-
-```text
-hr-management/
-├── components/
-│   ├── components.js       ← Renderer component aktif
-│   ├── header.html         ← Partial/referensi markup header
-│   ├── navbar.html         ← Partial/referensi markup navbar
-│   └── footer.html         ← Partial/referensi markup footer
-├── pages/
-├── employee/
-├── assets/
-├── dashboard.html
-├── login.html
-└── index.html
-```
-
-Halaman cukup menggunakan placeholder `data-component`. File aktif yang merender component adalah `components/components.js`, sehingga tidak bergantung pada `fetch()` partial HTML.
