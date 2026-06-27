@@ -173,21 +173,21 @@ function seedHRData() {
   if (!localStorage.getItem(HRStorage.key("absensi"))) {
     const today = new Date().toISOString().slice(0, 10);
     HRStorage.set("absensi", [
-      {
-        id: "abs-1718000000000",
-        id_karyawan: "kar-1718000000000",
-        tanggal: today,
-        jam_masuk: "08:02",
-        jam_keluar: "17:05",
-        status: "Hadir",
-        lokasi_masuk: "-6.200000,106.816666",
-        lokasi_keluar: "-6.200000,106.816666",
-        foto_masuk: "",
-        foto_keluar: "",
-        keterangan: "Sample data",
-        created_at: now,
-        updated_at: now,
-      },
+      // {
+      //   id: "abs-1718000000000",
+      //   id_karyawan: "kar-1718000000000",
+      //   tanggal: today,
+      //   jam_masuk: "08:02",
+      //   jam_keluar: "17:05",
+      //   status: "Hadir",
+      //   lokasi_masuk: "-6.200000,106.816666",
+      //   lokasi_keluar: "-6.200000,106.816666",
+      //   foto_masuk: "",
+      //   foto_keluar: "",
+      //   keterangan: "Sample data",
+      //   created_at: now,
+      //   updated_at: now,
+      // },
     ]);
   }
   if (!localStorage.getItem(HRStorage.key("tugas_harian"))) {
