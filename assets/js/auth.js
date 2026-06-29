@@ -108,7 +108,7 @@ function requireAuth(type) {
     clearSession();
 
     const fallback =
-      type === "employee" ? "/hr-pem-web-1/employee/login.html" : "/hr-pem-web-1/login.html";
+      type === "employee" ? "/employee/login.html" : "/login.html";
 
     location.href = fallback;
 
@@ -121,8 +121,8 @@ function requireAuth(type) {
 
 function logout() {
   const loginPath = location.pathname.includes("/employee/")
-    ? "/hr-pem-web-1/employee/login.html"
-    : "/hr-pem-web-1/login.html";
+    ? "/employee/login.html"
+    : "/login.html";
 
   clearSession();
 
